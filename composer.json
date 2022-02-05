@@ -4,6 +4,12 @@
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "brunocfalcao/blade-feather-icons": "^2.0",
@@ -13,6 +19,7 @@
         "laravel/helpers": "^1.5",
         "laravel/horizon": "^5.8",
         "laravel/jetstream": "^2.6",
+        "laravel/nova": "^3.30",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.5",
@@ -50,7 +57,9 @@
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
             "@php artisan vendor:publish --force --tag=livewire:assets --ansi",
-            "@php artisan horizon:publish"
+            "@php artisan horizon:publish",
+            "@php artisan nova:publish --force",
+            "php artisan view:clear"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
