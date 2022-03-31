@@ -65,14 +65,17 @@ function is_root(\App\Models\User $user){
 
 
 ### Horizon
+
 ```
 composer require laravel/horizon
-php artisan horizon:install```
+php artisan horizon:install
+```
 
 Change gate to use `is_root($user)`
 
 
 ### Blade-icon thing
+
 ```composer require brunocfalcao/blade-feather-icons```
 
 
