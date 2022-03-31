@@ -10,8 +10,10 @@ composer require barryvdh/laravel-debugbar --dev
 ```
 
 ### Helpers
-$ mkdir -p app/Support/
-$ touch app/Support/helpers.php
+```
+mkdir -p app/Support/
+touch app/Support/helpers.php
+```
 Under autoload in composer.json
 ```
 "files": [
