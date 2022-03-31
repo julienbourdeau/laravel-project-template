@@ -32,7 +32,7 @@ composer require laravel/helpers
 \App\Models\User::factory([
     'name' => 'Julien Bourdeau',
     'email' => 'julien@julienbourdeau.com',
-])->create();
+])->withPersonalTeam()->create();
 ```
 
 ### Sentry
@@ -80,8 +80,31 @@ Change gate to use `is_root($user)`
 
 
 ### Log tool
+
 ```composer require rap2hpoutre/laravel-log-viewer```
+
 In `routes/web.php`
 ```php
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
+```
+
+## Setup local env
+
+### Database
+
+```
+sudo mysql -e "CREATE DATABASE mksaas;"
+php artisan migrate:fresh --seed
+```
+
+### Build Assets
+
+```
+npm install && npm ci && npm run dev
+```
+
+### Valet
+
+```
+valet link
 ```
