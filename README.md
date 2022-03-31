@@ -12,7 +12,7 @@ composer require barryvdh/laravel-debugbar --dev
 ### Helpers
 ```
 mkdir -p app/Support/
-touch app/Support/helpers.php
+echo -e "<?php\n" > app/Support/helpers.php
 ```
 Under autoload in composer.json
 ```
@@ -39,7 +39,7 @@ composer require laravel/helpers
 
 `composer require sentry/sentry-laravel`
 
-App/Exceptions/Handler.php
+In `app/Exceptions/Handler.php`
 ```php
 public function register()
 {
@@ -53,9 +53,15 @@ public function register()
 php artisan sentry:publish --dsn=https://examplePublicKey@o0.ingest.sentry.io/0
 
 
-Root user access
+### Root user access
 
-?
+In `app/Support/helpers.php`
+
+```php
+function is_root(\App\Models\User $user){
+    return 'julien@julienbourdeau.com' == $user->email;
+}
+```
 
 
 ### Horizon
