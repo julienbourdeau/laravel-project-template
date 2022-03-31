@@ -73,6 +73,12 @@ php artisan horizon:install
 
 Change gate to use `is_root($user)`
 
+In composer.json, under `scripts > post-update-cmd`
+
+```
+"@php artisan horizon:publish --ansi"
+```
+
 
 ### Blade-icon thing
 
